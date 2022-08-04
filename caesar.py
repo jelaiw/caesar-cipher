@@ -4,7 +4,7 @@ def encrypt(plaintext):
 	ciphertext = ""
 	for letter in list(plaintext):
 		shift_index = alphabet.index(letter) + key
-		if (shift_index > len(alphabet)):
+		if (shift_index >= len(alphabet)):
 			shift_index = shift_index - len(alphabet)
 		ciphertext += alphabet[shift_index]
 

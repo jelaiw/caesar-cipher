@@ -8,3 +8,6 @@ class TestCipherMethods(unittest.TestCase):
 	def test_encrypt_shift_wraps(self):
 		self.assertEqual(caesar.encrypt("zoo"), "crr")
 
+	def test_encrypt_exact_shift_boundary(self):
+		self.assertEqual(caesar.encrypt("xray"), "audb")
+
