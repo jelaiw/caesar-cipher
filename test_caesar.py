@@ -14,3 +14,11 @@ class TestCipherMethods(unittest.TestCase):
 	def test_decrypt_happypath(self):
 		self.assertEqual(caesar.decrypt("fdhvdu"), "caesar")
 
+	def test_decrypt_shift_wraps(self):
+		self.assertEqual(caesar.decrypt("crr"), "zoo")
+
+	def test_decrypt_shift_wraps_2(self):
+		self.assertEqual(caesar.decrypt("bar"), "yxo")
+
+	def test_decrypt_exact_shift_boundary(self):
+		self.assertEqual(caesar.decrypt("audb"), "xray")
