@@ -3,9 +3,10 @@ def encrypt(plaintext):
 	key = 3
 	ciphertext = ""
 	for letter in list(plaintext):
-		shift_index = alphabet.index(letter) + key
-		if (shift_index >= len(alphabet)):
-			shift_index = shift_index - len(alphabet)
-		ciphertext += alphabet[shift_index]
+		# Shift index forward in the alphabet.
+		index = alphabet.index(letter) + key
+		if (index >= len(alphabet)): # Wrap back to beginning of alphabet.
+			index = index - len(alphabet)
+		ciphertext += alphabet[index]
 
 	return ciphertext
