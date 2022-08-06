@@ -11,3 +11,6 @@ class TestCipherMethods(unittest.TestCase):
 	def test_encrypt_exact_shift_boundary(self):
 		self.assertEqual(caesar.encrypt("xray"), "audb")
 
+	def test_decrypt_happypath(self):
+		self.assertEqual(caesar.decrypt("fdhvdu"), "caesar")
+
