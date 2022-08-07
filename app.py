@@ -34,3 +34,7 @@ with col2:
 		previous_ciphertext = st.session_state.ciphertext
 	ciphertext = st.text_area("Ciphertext", value=previous_ciphertext)
 	st.button("Decrypt", on_click=decrypt_handler, args=(ciphertext, ))
+
+st.header("References")
+with open("references.md", "r") as f:
+	st.markdown(f.read())
