@@ -14,12 +14,17 @@ def decrypt_handler(ciphertext):
 st.title("The Caesar Cipher")
 
 st.header("Overview")
+st.subheader("The Basics")
 with open("basics.md", "r") as f:
 	st.markdown(f.read())
 st.latex(r'C = \bold{E}(K, P)')
 
 st.markdown("Similarly, when the cipher is in decryption mode:")
 st.latex(r'P = \bold{D}(K, C)')
+
+st.subheader("The Caesar Cipher")
+with open("caesar.md", "r") as f:
+	st.markdown(f.read())
 
 st.header("Try it!")
 
