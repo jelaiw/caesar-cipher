@@ -16,6 +16,10 @@ st.title("The Caesar Cipher")
 st.header("Overview")
 with open("basics.md", "r") as f:
 	st.markdown(f.read())
+st.latex(r'C = \bold{E}(K, P)')
+
+st.markdown("Similarly, when the cipher is in decryption mode:")
+st.latex(r'P = \bold{D}(K, C)')
 
 st.header("Try it!")
 
