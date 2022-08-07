@@ -11,7 +11,7 @@ def decrypt_handler(ciphertext):
 	st.session_state.plaintext = plaintext
 	st.session_state.ciphertext = ciphertext
 
-st.title("The Caesar Cipher")
+st.title("Fun with Caesar Ciphers")
 
 st.header("Overview")
 st.subheader("The Basics")
