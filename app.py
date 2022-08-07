@@ -13,6 +13,10 @@ def decrypt_handler(ciphertext):
 
 st.title("The Caesar Cipher")
 
+st.header("Overview")
+with open("basics.md", "r") as f:
+	st.markdown(f.read())
+
 st.header("Try it!")
 
 col1, col2 = st.columns(2)
