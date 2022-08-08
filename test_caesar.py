@@ -11,6 +11,9 @@ class TestCipherMethods(unittest.TestCase):
 	def test_encrypt_exact_shift_boundary(self):
 		self.assertEqual(caesar.encrypt("xray"), "audb")
 
+	def test_encrypt_uppercase_input(self):
+		self.assertEqual(caesar.encrypt("CAESAR"), "fdhvdu")
+
 	def test_decrypt_happypath(self):
 		self.assertEqual(caesar.decrypt("fdhvdu"), "caesar")
 
@@ -22,3 +25,7 @@ class TestCipherMethods(unittest.TestCase):
 
 	def test_decrypt_exact_shift_boundary(self):
 		self.assertEqual(caesar.decrypt("audb"), "xray")
+
+	def test_decrypt_uppercase_input(self):
+		self.assertEqual(caesar.decrypt("FDHVDU"), "caesar")
+
