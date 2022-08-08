@@ -14,6 +14,9 @@ class TestCipherMethods(unittest.TestCase):
 	def test_encrypt_uppercase_input(self):
 		self.assertEqual(caesar.encrypt("CAESAR"), "fdhvdu")
 
+	def test_encrypt_mixed_case_input(self):
+		self.assertEqual(caesar.encrypt("Caesar"), "fdhvdu")
+
 	def test_decrypt_happypath(self):
 		self.assertEqual(caesar.decrypt("fdhvdu"), "caesar")
 
@@ -29,3 +32,5 @@ class TestCipherMethods(unittest.TestCase):
 	def test_decrypt_uppercase_input(self):
 		self.assertEqual(caesar.decrypt("FDHVDU"), "caesar")
 
+	def test_decrypt_mixed_case_input(self):
+		self.assertEqual(caesar.decrypt("fDhVdU"), "caesar")
