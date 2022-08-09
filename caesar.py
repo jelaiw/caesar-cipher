@@ -3,12 +3,11 @@ import re
 ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 PATTERN = re.compile(r'[a-z]+')
 
-def encrypt(plaintext):
+def encrypt(plaintext, key=3):
 	# See https://docs.python.org/3/library/re.html#re.Pattern.fullmatch.
 	if PATTERN.fullmatch(plaintext) is None:
 		raise ValueError("illegal input")
 
-	key = 3
 	ciphertext = ""
 	for letter in list(plaintext):
 		# Shift index forward in the alphabet.
@@ -19,10 +18,9 @@ def encrypt(plaintext):
 
 	return ciphertext
 
-def decrypt(ciphertext):
+def decrypt(ciphertext, key=3):
 	if PATTERN.fullmatch(ciphertext) is None:
 		raise ValueError("illegal input")
-	key = 3
 	plaintext = ""
 	for letter in list(ciphertext):
 		# Shift index backward in the alphabet.
