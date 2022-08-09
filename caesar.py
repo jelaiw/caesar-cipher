@@ -1,10 +1,18 @@
-ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+import re
 
-# Note, plaintext is expected to be lowercase.
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+PATTERN = re.compile(r'[a-zA-Z]+')
+
 def encrypt(plaintext):
+	# See https://docs.python.org/3/library/re.html#re.Pattern.fullmatch.
+	if PATTERN.fullmatch(plaintext) is None:
+		raise ValueError("illegal input")
+
 	key = 3
+
 	# See https://docs.python.org/3/library/stdtypes.html#str.lower.
 	plaintext = plaintext.lower()
+
 	ciphertext = ""
 	for letter in list(plaintext):
 		# Shift index forward in the alphabet.
@@ -16,6 +24,8 @@ def encrypt(plaintext):
 	return ciphertext
 
 def decrypt(ciphertext):
+	if PATTERN.fullmatch(ciphertext) is None:
+		raise ValueError("illegal input")
 	key = 3
 	ciphertext = ciphertext.lower()
 	plaintext = ""
