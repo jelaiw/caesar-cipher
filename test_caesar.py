@@ -18,13 +18,6 @@ class TestCipherMethods(unittest.TestCase):
 		msg = context_manager.exception.args[0]
 		self.assertEqual("illegal input", msg)
 
-	def test_encrypt_mixed_case_input(self):
-		with self.assertRaises(ValueError) as context_manager:
-			caesar.encrypt("Caesar")
-		# Unpack args tuple to expected message (first argument).
-		msg = context_manager.exception.args[0]
-		self.assertEqual("illegal input", msg)
-
 	def test_encrypt_input_with_spaces(self):
 		with self.assertRaises(ValueError) as context_manager:
 			caesar.encrypt("hello world")
@@ -44,23 +37,9 @@ class TestCipherMethods(unittest.TestCase):
 	def test_decrypt_exact_shift_boundary(self):
 		self.assertEqual(caesar.decrypt("audb"), "xray")
 
-	def test_decrypt_uppercase_input(self):
-		with self.assertRaises(ValueError) as context_manager:
-			caesar.decrypt("FDHVDU")
-		# Unpack args tuple to expected message (first argument).
-		msg = context_manager.exception.args[0]
-		self.assertEqual("illegal input", msg)
-
 	def test_decrypt_mixed_case_input(self):
 		with self.assertRaises(ValueError) as context_manager:
 			caesar.decrypt("fDhVdU")
-		# Unpack args tuple to expected message (first argument).
-		msg = context_manager.exception.args[0]
-		self.assertEqual("illegal input", msg)
-
-	def test_decrypt_input_with_spaces(self):
-		with self.assertRaises(ValueError) as context_manager:
-			caesar.decrypt("khoor zruog")
 		# Unpack args tuple to expected message (first argument).
 		msg = context_manager.exception.args[0]
 		self.assertEqual("illegal input", msg)
