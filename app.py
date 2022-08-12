@@ -1,13 +1,13 @@
 import streamlit as st
 import caesar
 
-def encrypt_handler(plaintext):
-	ciphertext = caesar.encrypt(plaintext)
+def encrypt_handler(plaintext, key):
+	ciphertext = caesar.encrypt(plaintext, key)
 	st.session_state.plaintext = plaintext
 	st.session_state.ciphertext = ciphertext
 
-def decrypt_handler(ciphertext):
-	plaintext = caesar.decrypt(ciphertext)
+def decrypt_handler(ciphertext, key):
+	plaintext = caesar.decrypt(ciphertext, key)
 	st.session_state.plaintext = plaintext
 	st.session_state.ciphertext = ciphertext
 
@@ -29,21 +29,30 @@ st.image("fig_1-2.png", width=512, caption="Figure 1: The Caesar cipher [1]")
 
 st.header("Try it!")
 
-col1, col2 = st.columns(2)
+st.sidebar.subheader("Settings")
+key_setting = st.sidebar.selectbox("Select a Key", ('Caesar', 'rot13', 'Custom'))
+key = 3
+if key_setting == 'rot13':
+	key = 13
+elif key_setting == 'Custom':
+	key = st.sidebar.slider("Custom Key", 1, 25, 3)
 
+col1, col2 = st.columns(2)
 with col1:
 	previous_plaintext = ""
 	if 'plaintext' in st.session_state:
 		previous_plaintext = st.session_state.plaintext
 	plaintext = st.text_area("Plaintext", value=previous_plaintext)
-	st.button("Encrypt", on_click=encrypt_handler, args=(plaintext, ))
+	st.button("Encrypt", on_click=encrypt_handler, args=(plaintext, key, ))
 
 with col2:
 	previous_ciphertext = ""
 	if 'ciphertext' in st.session_state:
 		previous_ciphertext = st.session_state.ciphertext
 	ciphertext = st.text_area("Ciphertext", value=previous_ciphertext)
-	st.button("Decrypt", on_click=decrypt_handler, args=(ciphertext, ))
+	st.button("Decrypt", on_click=decrypt_handler, args=(ciphertext, key, ))
+
+st.markdown("Key = **{0}**".format(key))
 
 st.header("References")
 with open("references.md", "r") as f:
