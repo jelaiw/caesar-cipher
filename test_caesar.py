@@ -2,6 +2,12 @@ import unittest
 import caesar
 
 class TestCipherMethods(unittest.TestCase):
+	def test_encrypt_rot13_happypath(self):
+		self.assertEqual(caesar.encrypt("hello", key=13), "uryyb")
+
+	def test_decrypt_rot13_happypath(self):
+		self.assertEqual(caesar.decrypt("uryyb", key=13), "hello")
+
 	def test_encrypt_happypath(self):
 		self.assertEqual(caesar.encrypt("caesar"), "fdhvdu")
 
