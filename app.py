@@ -30,7 +30,7 @@ st.image("fig_1-2.png", width=512, caption="Figure 1: The Caesar cipher [1]")
 st.header("Try it!")
 
 st.sidebar.subheader("Settings")
-key_setting = st.sidebar.selectbox("Select a Key", ('Caesar', 'rot13', 'Custom'))
+key_setting = st.sidebar.selectbox("Select a Secret Key", ('Caesar', 'rot13', 'Custom'))
 key = 3
 if key_setting == 'rot13':
 	key = 13
