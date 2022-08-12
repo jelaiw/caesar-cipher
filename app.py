@@ -23,9 +23,9 @@ st.markdown("Similarly, when the cipher is in decryption mode:")
 st.latex(r'P = \bold{D}(K, C)')
 
 st.subheader("The Caesar Cipher")
-with open("caesar.md", "r") as f:
+with open("book_quote.md", "r") as f:
 	st.markdown(f.read())
-st.image("fig_1-2.png", width=512, caption="Figure 1-2: The Caesar cipher [1]")
+st.image("fig_1-2.png", width=512, caption="Figure 1: The Caesar cipher [1]")
 
 st.header("Try it!")
 
