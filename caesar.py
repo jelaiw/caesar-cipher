@@ -1,13 +1,6 @@
 import re
 
 ALPHABET = "abcdefghijklmnopqrstuvwxyz"
-PATTERN = re.compile(r'[a-z]+')
-
-# Check that plaintext (or ciphertext) input is part of defined alphabet.
-def check_input(text):
-	# See https://docs.python.org/3/library/re.html#re.Pattern.fullmatch.
-	if PATTERN.fullmatch(text) is None:
-		raise ValueError("illegal input")
 
 def encrypt(plaintext, key=3):
 	ciphertext = ""
