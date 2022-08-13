@@ -29,19 +29,14 @@ class TestCipherMethods(unittest.TestCase):
 	def test_decrypt_exact_shift_boundary(self):
 		self.assertEqual(caesar.decrypt("audb"), "xray")
 
-	def test_check_input_uppercase(self):
-		with self.assertRaises(ValueError) as context_manager:
-			caesar.check_input("CAESAR")
-		# Unpack args tuple to expected message (first argument).
-		msg = context_manager.exception.args[0]
-		self.assertEqual("illegal input", msg)
+	def test_encrypt_input_with_spaces(self):
+		self.assertEqual(caesar.encrypt("hello world"), "khoor zruog")
 
-	def test_check_input_with_spaces(self):
-		with self.assertRaises(ValueError) as cm:
-			caesar.check_input("hello world")
-		self.assertEqual("illegal input", cm.exception.args[0])
+	def test_decrypt_input_with_number_and_symbol(self):
+		self.assertEqual(caesar.decrypt("fd3v@u"), "ca3s@r")
 
-	def test_check_input_mixed_case(self):
-		with self.assertRaises(ValueError) as cm:
-			caesar.check_input("fDhVdU")
-		self.assertEqual("illegal input", cm.exception.args[0])
+#	def test_encrypt_uppercase_input(self):
+#		self.assertEqual(caesar.encrypt("CAESAR"), "FDHVDU")
+#
+#	def test_decrypt_uppercase_input(self):
+#		self.assertEqual(caesar.decrypt("fDhVdU"), "cAeSaR")
