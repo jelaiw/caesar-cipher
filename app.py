@@ -2,12 +2,12 @@ import streamlit as st
 import caesar
 
 def encrypt_handler(plaintext, key):
-	ciphertext = caesar.encrypt(plaintext, key)
+	ciphertext = caesar.encrypt(plaintext.lower(), key)
 	st.session_state.plaintext = plaintext
 	st.session_state.ciphertext = ciphertext
 
 def decrypt_handler(ciphertext, key):
-	plaintext = caesar.decrypt(ciphertext, key)
+	plaintext = caesar.decrypt(ciphertext.lower(), key)
 	st.session_state.plaintext = plaintext
 	st.session_state.ciphertext = ciphertext
 
