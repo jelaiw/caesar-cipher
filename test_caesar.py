@@ -35,8 +35,8 @@ class TestCipherMethods(unittest.TestCase):
 	def test_decrypt_input_with_number_and_symbol(self):
 		self.assertEqual(caesar.decrypt("fd3v@u"), "ca3s@r")
 
-#	def test_encrypt_uppercase_input(self):
-#		self.assertEqual(caesar.encrypt("CAESAR"), "FDHVDU")
-#
-#	def test_decrypt_uppercase_input(self):
-#		self.assertEqual(caesar.decrypt("fDhVdU"), "cAeSaR")
+	def test_encrypt_uppercase_input(self):
+		self.assertEqual(caesar.encrypt("CAESAR"), "FDHVDU")
+
+	def test_decrypt_uppercase_input(self):
+		self.assertEqual(caesar.decrypt("fDhVdU"), "cAeSaR")
