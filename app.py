@@ -30,9 +30,9 @@ st.image("fig_1-2.png", width=512, caption="Figure 1: The Caesar cipher [1]")
 st.header("Try it!")
 
 st.sidebar.subheader("Settings")
-key_setting = st.sidebar.selectbox("Select a Secret Key", ('Caesar', 'rot13', 'Custom'))
+key_setting = st.sidebar.selectbox("Select a Key", ('Caesar', 'ROT13', 'Custom'))
 key = 3
-if key_setting == 'rot13':
+if key_setting == 'ROT13':
 	key = 13
 elif key_setting == 'Custom':
 	key = st.sidebar.slider("Custom Key", 1, 25, 3)
@@ -42,14 +42,16 @@ with col1:
 	previous_plaintext = ""
 	if 'plaintext' in st.session_state:
 		previous_plaintext = st.session_state.plaintext
-	plaintext = st.text_area("Plaintext", value=previous_plaintext)
+	st.markdown("Plaintext")
+	plaintext = st.text_area("Text to encrypt", value=previous_plaintext)
 	st.button("Encrypt", on_click=encrypt_handler, args=(plaintext, key, ))
 
 with col2:
 	previous_ciphertext = ""
 	if 'ciphertext' in st.session_state:
 		previous_ciphertext = st.session_state.ciphertext
-	ciphertext = st.text_area("Ciphertext", value=previous_ciphertext)
+	st.markdown("Ciphertext")
+	ciphertext = st.text_area("Text to decrypt", value=previous_ciphertext)
 	st.button("Decrypt", on_click=decrypt_handler, args=(ciphertext, key, ))
 
 st.markdown("Key = **{0}**".format(key))
