@@ -12,7 +12,7 @@ def decrypt_handler(ciphertext, key):
 	st.session_state.ciphertext = ciphertext
 
 st.title("Fun with Caesar Ciphers")
-st.markdown("*Dedicated to my curious and intrepid kiddos, AWP and AC. With love, Dad.*")
+st.markdown("*Dedicated to my curious, intrepid, and hard-working kiddos, AWP and AC. With much love, Dad. Have fun learning!!*")
 
 st.header("Overview")
 st.subheader("The Basics")
