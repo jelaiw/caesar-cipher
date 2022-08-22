@@ -20,7 +20,7 @@ with open("basics.md", "r") as f:
 	st.markdown(f.read())
 st.latex(r'C = \bold{E}(K, P)')
 
-st.markdown("Similarly, when the cipher is in decryption mode:")
+st.markdown("Similarly, for decryption:")
 st.latex(r'P = \bold{D}(K, C)')
 
 st.subheader("The Caesar Cipher")
