@@ -23,10 +23,14 @@ st.latex(r'C = \bold{E}(K, P)')
 st.markdown("Similarly, for decryption:")
 st.latex(r'P = \bold{D}(K, C)')
 
-st.subheader("The Caesar Cipher")
+st.subheader("Classic Caesar Cipher")
 with open("book_quote.md", "r") as f:
 	st.markdown(f.read())
 st.image("fig_1-2.png", width=512, caption="Figure 1: The Caesar cipher")
+
+st.subheader("ROT13")
+with open("rot13.md", "r") as f:
+	st.markdown(f.read())
 
 st.header("Try it!")
 
