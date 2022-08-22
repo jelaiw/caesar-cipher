@@ -26,7 +26,7 @@ st.latex(r'P = \bold{D}(K, C)')
 st.subheader("The Caesar Cipher")
 with open("book_quote.md", "r") as f:
 	st.markdown(f.read())
-st.image("fig_1-2.png", width=512, caption="Figure 1: The Caesar cipher [1]")
+st.image("fig_1-2.png", width=512, caption="Figure 1: The Caesar cipher")
 
 st.header("Try it!")
 
