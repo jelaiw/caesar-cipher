@@ -31,7 +31,7 @@ st.image("fig_1-2.png", width=512, caption="Figure 1: The Caesar cipher")
 st.subheader("ROT13")
 with open("rot13.md", "r") as f:
 	st.markdown(f.read())
-st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=384, caption="Figure 2: ROT13 Example")
+st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=384, caption="Figure 2: ROT13 example")
 
 st.header("Try it!")
 
