@@ -49,7 +49,7 @@ with col1:
 	if 'plaintext' in st.session_state:
 		previous_plaintext = st.session_state.plaintext
 	st.markdown("**Plaintext**")
-	plaintext = st.text_area("Text to encrypt", value=previous_plaintext)
+	plaintext = st.text_area("Text to encrypt", value=previous_plaintext, max_chars=280)
 	st.button("Encrypt", on_click=encrypt_handler, args=(plaintext, key, ))
 
 with col2:
@@ -57,7 +57,7 @@ with col2:
 	if 'ciphertext' in st.session_state:
 		previous_ciphertext = st.session_state.ciphertext
 	st.markdown("**Ciphertext**")
-	ciphertext = st.text_area("Text to decrypt", value=previous_ciphertext)
+	ciphertext = st.text_area("Text to decrypt", value=previous_ciphertext, max_chars=280)
 	st.button("Decrypt", on_click=decrypt_handler, args=(ciphertext, key, ))
 
 st.markdown("Key = **{0}**".format(key))
