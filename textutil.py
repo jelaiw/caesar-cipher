@@ -1,2 +1,2 @@
-def remove_word_boundaries(text):
+def remove_whitespace(text):
 	return "".join(text.split())

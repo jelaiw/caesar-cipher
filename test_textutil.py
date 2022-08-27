@@ -1,6 +1,6 @@
 import unittest
-from textutil import remove_word_boundaries as remove
+from textutil import remove_whitespace
 
 class TestTextUtilMethods(unittest.TestCase):
-	def test_remove_word_boundaries_happypath(self):
-		self.assertEqual(remove("we the people"), "wethepeople")
+	def test_remove_whitespace_happypath(self):
+		self.assertEqual(remove_whitespace("we the people"), "wethepeople")
