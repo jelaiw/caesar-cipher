@@ -11,6 +11,14 @@ def decrypt_handler(ciphertext, key):
 	st.session_state.plaintext = plaintext
 	st.session_state.ciphertext = ciphertext
 
+def handle_word_boundaries(text, wb_setting):
+	if wb_setting == "Preserve":
+		return text
+	elif wb_setting == "Remove":
+		return "".join(text.split())
+	else:
+		return text
+
 st.title("Fun with Caesar Ciphers")
 st.markdown("*Dedicated to my curious, intrepid, and hard-working kiddos, AWP and AC. With much love, Dad. Have fun learning!!*")
 
@@ -43,6 +51,8 @@ if key_setting == 'ROT13':
 elif key_setting == 'Custom':
 	key = st.sidebar.slider("Custom Key", 1, 25, 3)
 
+wb_setting = st.sidebar.radio("Word Boundaries", ("Preserve", "Remove"))
+
 col1, col2 = st.columns(2)
 with col1:
 	previous_plaintext = ""
@@ -50,6 +60,7 @@ with col1:
 		previous_plaintext = st.session_state.plaintext
 	st.markdown("**Plaintext**")
 	plaintext = st.text_area("Text to encrypt", value=previous_plaintext, max_chars=280)
+	plaintext = handle_word_boundaries(plaintext, wb_setting)
 	st.button("Encrypt", on_click=encrypt_handler, args=(plaintext, key, ))
 
 with col2:
@@ -58,6 +69,7 @@ with col2:
 		previous_ciphertext = st.session_state.ciphertext
 	st.markdown("**Ciphertext**")
 	ciphertext = st.text_area("Text to decrypt", value=previous_ciphertext, max_chars=280)
+	ciphertext = handle_word_boundaries(ciphertext, wb_setting)
 	st.button("Decrypt", on_click=decrypt_handler, args=(ciphertext, key, ))
 
 st.markdown("Key = **{0}**".format(key))
