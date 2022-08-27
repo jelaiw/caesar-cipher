@@ -7,7 +7,7 @@ def disguise_text(text):
 	text = remove_whitespace(text)
 	text = remove_punctuation(text)
 
-	BLOCKS = re.compile(".....?").findall
+	BLOCKS = re.compile(".....?").findall # See https://stackoverflow.com/a/65245113.
 	return " ".join(BLOCKS(text))
 
 def remove_whitespace(text):
