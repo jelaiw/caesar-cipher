@@ -44,7 +44,7 @@ st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=
 st.header("Try it!")
 
 st.sidebar.subheader("Settings")
-key_setting = st.sidebar.selectbox("Select a Key", ('Caesar', 'ROT13', 'Custom'))
+key_setting = st.sidebar.selectbox("Key", ('Caesar', 'ROT13', 'Custom'))
 key = 3
 if key_setting == 'ROT13':
 	key = 13
