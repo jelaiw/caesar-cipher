@@ -53,7 +53,7 @@ with col1:
 	previous_text = ""
 	if 'text' in st.session_state:
 		previous_text = st.session_state.text
-	text = st.text_area("Type or paste in text to encrypt or decrypt", value=previous_text, max_chars=280)
+	text = st.text_area("Type or paste in text to encrypt or decrypt", help="What happens when you encrypt twice with ROT13?", value=previous_text, max_chars=280)
 	if disguise:
 		text = disguise_text(text)
 
