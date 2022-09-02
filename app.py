@@ -3,6 +3,16 @@ import caesar
 from textutil import disguise_text
 import random
 
+# See https://discuss.streamlit.io/t/how-to-add-emoji-to-a-button/15513/2.
+# This seemed fun. :-D
+def random_emoji():
+	st.session_state.emoji = random.choice(emojis)
+
+if "emoji" not in st.session_state:
+	st.session_state.emoji = "👈"
+
+emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼"]
+
 def button_handler(text, cipher_mode, key):
 	if cipher_mode == 'Encryption':
 		text = caesar.encrypt(text, key)
@@ -46,7 +56,7 @@ if key_setting == 'ROT13':
 elif key_setting == 'Custom':
 	key = st.sidebar.slider("Custom Key", 1, 25, 3)
 
-disguise = st.sidebar.checkbox("Disguise word boundaries", help="This setting removes punctuation (and spaces) and rewrites text into fixed length blocks.")
+disguise = st.sidebar.checkbox("Disguise word boundaries", help="Removes punctuation and spaces. Rewrites text into fixed length blocks.")
 
 col1, col2 = st.columns(2)
 with col1:
@@ -63,13 +73,3 @@ st.markdown("Key = **{0}**".format(key))
 st.header("References")
 with open("references.md", "r") as f:
 	st.markdown(f.read())
-
-# See https://discuss.streamlit.io/t/how-to-add-emoji-to-a-button/15513/2.
-# This seemed fun. :-D
-def random_emoji():
-	st.session_state.emoji = random.choice(emojis)
-
-if "emoji" not in st.session_state:
-	st.session_state.emoji = "👈"
-
-emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼"]
