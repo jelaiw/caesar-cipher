@@ -53,10 +53,7 @@ with col1:
 	previous_text = ""
 	if 'text' in st.session_state:
 		previous_text = st.session_state.text
-	text_area_label = "Plaintext"
-	if cipher_mode == 'Decryption':
-		text_area_label = "Ciphertext"
-	text = st.text_area(text_area_label, value=previous_text, max_chars=280)
+	text = st.text_area("Type or paste in text to encrypt or decrypt", value=previous_text, max_chars=280)
 	if disguise:
 		text = disguise_text(text)
 
