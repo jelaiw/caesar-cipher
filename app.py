@@ -2,15 +2,12 @@ import streamlit as st
 import caesar
 from textutil import disguise_text
 
-def encrypt_handler(plaintext, key):
-	ciphertext = caesar.encrypt(plaintext, key)
-	st.session_state.plaintext = plaintext
-	st.session_state.ciphertext = ciphertext
-
-def decrypt_handler(ciphertext, key):
-	plaintext = caesar.decrypt(ciphertext, key)
-	st.session_state.plaintext = plaintext
-	st.session_state.ciphertext = ciphertext
+def button_handler(text, cipher_mode, key):
+	if cipher_mode == 'Encryption':
+		text = caesar.encrypt(text, key)
+	elif cipher_mode == 'Decryption':
+		text = caesar.decrypt(text, key)
+	st.session_state.text = text
 
 st.title("Fun with Caesar Ciphers")
 st.markdown("*Dedicated to my curious, intrepid, and hard-working kiddos, AWP and AC. With much love, Dad. Have fun learning!!*")
@@ -37,6 +34,7 @@ st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=
 st.header("Try it!")
 
 st.sidebar.subheader("Settings")
+cipher_mode = st.sidebar.radio("Cipher mode", ('Encryption', 'Decryption'))
 key_setting = st.sidebar.selectbox("Key", ('Caesar', 'ROT13', 'Custom'))
 key = 3
 if key_setting == 'ROT13':
@@ -48,26 +46,19 @@ disguise = st.sidebar.checkbox("Disguise word boundaries", help="This setting re
 
 col1, col2 = st.columns(2)
 with col1:
-	previous_plaintext = ""
-	if 'plaintext' in st.session_state:
-		previous_plaintext = st.session_state.plaintext
-	st.markdown("**Plaintext**")
-	plaintext = st.text_area("Text to encrypt", value=previous_plaintext, max_chars=280)
+	previous_text = ""
+	if 'text' in st.session_state:
+		previous_text = st.session_state.text
+	text_area_label = "Plaintext"
+	if cipher_mode == 'Decryption':
+		text_area_label = "Ciphertext"
+	text = st.text_area(text_area_label, value=previous_text, max_chars=280)
 	if disguise:
-		plaintext = disguise_text(plaintext)
-	st.button("Encrypt", on_click=encrypt_handler, args=(plaintext, key, ))
-
-with col2:
-	previous_ciphertext = ""
-	if 'ciphertext' in st.session_state:
-		previous_ciphertext = st.session_state.ciphertext
-	st.markdown("**Ciphertext**")
-	ciphertext = st.text_area("Text to decrypt", value=previous_ciphertext, max_chars=280)
-	if disguise:
-		ciphertext = disguise_text(ciphertext)
-	st.button("Decrypt", on_click=decrypt_handler, args=(ciphertext, key, ))
+		text = disguise_text(text)
 
 st.markdown("Key = **{0}**".format(key))
+st.markdown("Cipher mode = *{0}*".format(cipher_mode))
+st.button("Submit", on_click=button_handler, args=(text, cipher_mode,key, ))
 
 st.header("References")
 with open("references.md", "r") as f:
