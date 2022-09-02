@@ -10,7 +10,7 @@ def button_handler(text, cipher_mode, key):
 	st.session_state.text = text
 
 st.title("Fun with Caesar Ciphers")
-st.markdown("*Dedicated to my curious, intrepid, and hard-working kiddos, AWP and AC. With much love, Dad. Have fun learning!!*")
+st.markdown("*Dedicated to my curious, intrepid explorers. With love, Dad. Have fun learning!!*")
 
 st.header("Overview")
 st.subheader("The Basics")
