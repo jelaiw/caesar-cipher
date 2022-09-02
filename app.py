@@ -56,9 +56,8 @@ with col1:
 	if disguise:
 		text = disguise_text(text)
 
-st.markdown("Key = **{0}**".format(key))
-st.markdown("Cipher mode = *{0}*".format(cipher_mode))
 st.button("Submit", on_click=button_handler, args=(text, cipher_mode,key, ))
+st.markdown("Key = **{0}**".format(key))
 
 st.header("References")
 with open("references.md", "r") as f:
