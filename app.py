@@ -7,6 +7,8 @@ def button_handler(text, cipher_mode, key):
 		text = caesar.encrypt(text, key)
 	elif cipher_mode == 'Decryption':
 		text = caesar.decrypt(text, key)
+	else:
+		raise ValueError(cipher_mode)
 	st.session_state.text = text
 
 st.title("Fun with Caesar Ciphers")
