@@ -1,7 +1,9 @@
 ## Overview
 A Streamlit app for playing with Caesar ciphers.
 
-See https://jelaiw-caesar-cipher-app-0wksx6.streamlitapp.com/.
+## Run the App
+
+Visit the deployed app at https://jelaiw-caesar-cipher-app-0wksx6.streamlitapp.com/ (with a big TY to Streamlit Community Cloud).
 
 ## References
 1. "Serious Cryptography". Aumasson, JP. No Starch Press, Nov 2017.
