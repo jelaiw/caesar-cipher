@@ -17,3 +17,5 @@ class TestTextUtilMethods(unittest.TestCase):
 	def test_disguise_text_smaller_than_blocksize(self):
 		self.assertEqual(disguise_text("foo"), "foo")
 
+	def test_disguise_text_last_block_smaller_than_blocksize(self):
+		self.assertEqual(disguise_text("wethepeople"), "wethe peopl e")

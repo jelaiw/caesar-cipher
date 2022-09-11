@@ -1,18 +1,14 @@
 import string
-import re
+import textwrap
 
 # Disguise text by omitting punctuation and spaces and re-writing in blocks of fixed length (five character groups).
 # See https://en.wikipedia.org/wiki/Substitution_cipher for further context.
-def disguise_text(text):
+def disguise_text(text, blocksize=5):
 	text = remove_whitespace(text)
 	text = remove_punctuation(text)
 
-	BLOCK_SIZE = 5
-	if len(text) <= BLOCK_SIZE:
-		return text
-
-	BLOCKS = re.compile(".....?").findall # See https://stackoverflow.com/a/65245113.
-	return " ".join(BLOCKS(text))
+	# Credit to https://stackoverflow.com/a/21351295 for lead on textwrap.
+	return " ".join(textwrap.wrap(text, blocksize))
 
 def remove_whitespace(text):
 	return "".join(text.split())
