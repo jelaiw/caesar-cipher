@@ -13,3 +13,7 @@ class TestTextUtilMethods(unittest.TestCase):
 	def test_disguise_text_happypath(self):
 		# Borrow example from https://en.wikipedia.org/wiki/Substitution_cipher.
 		self.assertEqual(disguise_text("SIAA ZQ LKBA. VA ZOA RFPBLUAOAR!"), "SIAAZ QLKBA VAZOA RFPBL UAOAR")
+
+	def test_disguise_text_smaller_than_blocksize(self):
+		self.assertEqual(disguise_text("foo"), "foo")
+

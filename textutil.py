@@ -7,6 +7,10 @@ def disguise_text(text):
 	text = remove_whitespace(text)
 	text = remove_punctuation(text)
 
+	BLOCK_SIZE = 5
+	if len(text) <= BLOCK_SIZE:
+		return text
+
 	BLOCKS = re.compile(".....?").findall # See https://stackoverflow.com/a/65245113.
 	return " ".join(BLOCKS(text))
 
