@@ -7,6 +7,7 @@ def disguise_text(text, blocksize=5):
 	text = remove_whitespace(text)
 	text = remove_punctuation(text)
 
+	# See https://docs.python.org/3.8/library/textwrap.html#textwrap.wrap.
 	# Credit to https://stackoverflow.com/a/21351295 for lead on textwrap.
 	return " ".join(textwrap.wrap(text, blocksize))
 
