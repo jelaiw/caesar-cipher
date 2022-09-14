@@ -1,4 +1,4 @@
-![unit tests workflow](https://github.com/jelaiw/caesar-cipher/actions/workflows/unittests.yml/badge.svg)
+![build workflow](https://github.com/jelaiw/caesar-cipher/actions/workflows/build.yml/badge.svg)
 ## Overview
 A Streamlit app for playing with Caesar ciphers.
 
