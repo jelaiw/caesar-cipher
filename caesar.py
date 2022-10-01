@@ -1,14 +1,12 @@
 import re
-
-LC_ALPHABET = "abcdefghijklmnopqrstuvwxyz"
-UC_ALPHABET = LC_ALPHABET.upper()
+import string
 
 def encrypt(plaintext, key=3):
 	ciphertext = ""
 	for ch in list(plaintext):
-		alphabet = LC_ALPHABET
+		alphabet = string.ascii_lowercase
 		if ch.isupper():
-			alphabet = UC_ALPHABET
+			alphabet = string.ascii_uppercase
 
 		index = alphabet.find(ch)
 		if index == -1:
@@ -25,9 +23,9 @@ def encrypt(plaintext, key=3):
 def decrypt(ciphertext, key=3):
 	plaintext = ""
 	for ch in list(ciphertext):
-		alphabet = LC_ALPHABET
+		alphabet = string.ascii_lowercase
 		if ch.isupper():
-			alphabet = UC_ALPHABET
+			alphabet = string.ascii_uppercase
 
 		index = alphabet.find(ch)
 		if index == -1:
