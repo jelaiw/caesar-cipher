@@ -57,7 +57,7 @@ if key_setting == 'ROT13':
 elif key_setting == 'Custom':
 	key = st.sidebar.slider("Custom Key", 1, 25, 3)
 
-disguise = st.sidebar.checkbox("Disguise word boundaries", help="Removes punctuation and spaces. Rewrites text into fixed length blocks.")
+disguise = st.sidebar.checkbox("Disguise word boundaries", help="Remove punctuation and spaces. Rewrite text into fixed length blocks.")
 
 col1, col2 = st.columns(2)
 with col1:
