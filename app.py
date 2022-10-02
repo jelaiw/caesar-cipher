@@ -61,10 +61,11 @@ disguise = st.sidebar.checkbox("Disguise word boundaries", help="Remove punctuat
 
 col1, col2 = st.columns(2)
 with col1:
+    MAX_CHARS = 280
 	previous_text = ""
 	if 'text' in st.session_state:
 		previous_text = st.session_state.text
-	text = st.text_area("Type or paste in text to encrypt or decrypt", help="What happens when you encrypt twice with ROT13?", value=previous_text, max_chars=280)
+	text = st.text_area("Type or paste in text to encrypt or decrypt", help=f"Text limited to {MAX_CHARS} total characters.", value=previous_text, max_chars=MAX_CHARS)
 	if disguise:
 		text = disguise_text(text)
 
