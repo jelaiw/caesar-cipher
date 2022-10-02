@@ -26,23 +26,29 @@ def button_handler(text, cipher_mode, key):
 st.title("Fun with Caesar Ciphers")
 
 st.header("Overview")
-st.subheader("The Basics")
-with open("basics.md", "r") as f:
-	st.markdown(f.read())
-st.latex(r'C = \bold{E}(K, P)')
 
-st.markdown("Similarly, for decryption function **D**:")
-st.latex(r'P = \bold{D}(K, C)')
+tab1, tab2, tab3 = st.tabs(['The Basics', 'The Caesar Cipher', 'ROT13'])
 
-st.subheader("Classic Caesar Cipher")
+with tab1:
+    st.subheader("The Basics")
+    with open("basics.md", "r") as f:
+        st.markdown(f.read())
+    st.latex(r'C = \bold{E}(K, P)')
 
-st.markdown("The Caesar cipher ... encrypts a message by shifting each of the letters down three positions in the alphabet, wrapping back around to A if the shift reaches Z [1].")
-st.image("fig_1-2.png", width=384, caption="Figure 1: Caesar cipher example")
+    st.markdown("Similarly, for decryption function **D**:")
+    st.latex(r'P = \bold{D}(K, C)')
 
-st.subheader("ROT13")
-with open("rot13.md", "r") as f:
-	st.markdown(f.read())
-st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=384, caption="Figure 2: ROT13 example")
+with tab2:
+    st.subheader("The Caesar Cipher")
+
+    st.markdown("The Caesar cipher ... encrypts a message by shifting each of the letters down three positions in the alphabet, wrapping back around to A if the shift reaches Z [1].")
+    st.image("fig_1-2.png", width=384, caption="Figure 1: Caesar cipher example")
+
+with tab3:
+    st.subheader("ROT13")
+    with open("rot13.md", "r") as f:
+        st.markdown(f.read())
+    st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=384, caption="Figure 2: ROT13 example")
 
 st.header("Try it!")
 
