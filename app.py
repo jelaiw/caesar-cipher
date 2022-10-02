@@ -65,7 +65,7 @@ with col1:
 	previous_text = ""
 	if 'text' in st.session_state:
 		previous_text = st.session_state.text
-	text = st.text_area("Type or paste in text to encrypt or decrypt", help=f"Text limit of {MAX_CHARS} characters.", value=previous_text, max_chars=MAX_CHARS)
+	text = st.text_area("Type or paste in text to encrypt or decrypt", help=f"Limit of {MAX_CHARS} characters.", value=previous_text, max_chars=MAX_CHARS)
 	if disguise:
 		text = disguise_text(text)
 
