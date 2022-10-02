@@ -61,7 +61,7 @@ disguise = st.sidebar.checkbox("Disguise word boundaries", help="Remove punctuat
 
 col1, col2 = st.columns(2)
 with col1:
-    MAX_CHARS = 280
+	MAX_CHARS = 280
 	previous_text = ""
 	if 'text' in st.session_state:
 		previous_text = st.session_state.text
