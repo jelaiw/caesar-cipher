@@ -37,7 +37,7 @@ st.latex(r'P = \bold{D}(K, C)')
 st.subheader("Classic Caesar Cipher")
 
 st.markdown("The Caesar cipher ... encrypts a message by shifting each of the letters down three positions in the alphabet, wrapping back around to A if the shift reaches Z [1].")
-st.image("fig_1-2.png", width=512, caption="Figure 1: The Caesar cipher")
+st.image("fig_1-2.png", width=384, caption="Figure 1: Caesar cipher example")
 
 st.subheader("ROT13")
 with open("rot13.md", "r") as f:
