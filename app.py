@@ -58,6 +58,7 @@ elif key_setting == 'Custom':
 	key = st.sidebar.slider("Custom Key", 1, 25, 3)
 
 disguise = st.sidebar.checkbox("Disguise word boundaries", help="Rewrite text into fixed length blocks.")
+force_upper = st.sidebar.check("Force uppercase", value=True)
 
 col1, col2 = st.columns(2)
 with col1:
@@ -68,6 +69,8 @@ with col1:
 	text = st.text_area("Type or paste in text to encrypt or decrypt", help=f"Limit of {MAX_CHARS} characters.", value=previous_text, max_chars=MAX_CHARS)
 	if disguise:
 		text = disguise_text(text)
+    if force_upper:
+        text = text.upper()
 
 st.button(f"Click Me {st.session_state.emoji}", on_click=button_handler, args=(text, cipher_mode,key, ))
 st.markdown("Key = **{0}**".format(key))
