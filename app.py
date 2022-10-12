@@ -26,25 +26,25 @@ def button_handler(text, cipher_mode, key):
 st.title("Fun with Caesar Ciphers")
 
 st.header("Overview")
-tab1, tab2, tab3 = st.tabs(['The Basics', 'Caesar Cipher', 'ROT13'])
+tab1, tab2, tab3 = st.tabs(['Caesar Cipher', 'ROT13', 'The Basics'])
 
 with tab1:
+    st.subheader("Caesar Cipher")
+    st.markdown("The Caesar cipher ... encrypts a message by shifting each of the letters down three positions in the alphabet, wrapping back around to A if the shift reaches Z [1].")
+    st.image("fig_1-2.png", width=384, caption="Figure 1: Caesar cipher example")
+
+with tab2:
+    st.subheader("ROT13")
+    st.markdown("ROT13 is a special case of the Caesar cipher that replaces a letter with the 13th letter after it in the alphabet [2][3].")
+    st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=384, caption="Figure 2: ROT13 example")
+
+with tab3:
     st.subheader("The Basics")
     with open("basics.md", "r") as f:
         st.markdown(f.read())
     st.latex(r'C = \bold{E}(K, P)')
     st.markdown("Similarly, for decryption function **D**:")
     st.latex(r'P = \bold{D}(K, C)')
-
-with tab2:
-    st.subheader("Caesar Cipher")
-    st.markdown("The Caesar cipher ... encrypts a message by shifting each of the letters down three positions in the alphabet, wrapping back around to A if the shift reaches Z [1].")
-    st.image("fig_1-2.png", width=384, caption="Figure 1: Caesar cipher example")
-
-with tab3:
-    st.subheader("ROT13")
-    st.markdown("ROT13 is a special case of the Caesar cipher that replaces a letter with the 13th letter after it in the alphabet [2][3].")
-    st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=384, caption="Figure 2: ROT13 example")
 
 st.header("Try it!")
 
