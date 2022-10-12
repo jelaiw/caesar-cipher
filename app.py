@@ -57,8 +57,8 @@ if key_setting == 'ROT13':
 elif key_setting == 'Custom':
 	key = st.sidebar.slider("Custom Key", 1, 25, 3)
 
-disguise = st.sidebar.checkbox("Disguise word boundaries", help="Rewrite text into fixed length blocks.")
 force_upper = st.sidebar.checkbox("Force uppercase", value=True)
+disguise = st.sidebar.checkbox("Disguise word boundaries", help="Rewrite text into fixed length blocks.")
 
 col1, col2 = st.columns(2)
 with col1:
