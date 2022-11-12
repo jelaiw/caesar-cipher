@@ -1,3 +1,4 @@
 [server]
+# See https://discuss.streamlit.io/t/how-to-make-streamlit-run-on-codespaces/24526/4 for further detail.
 enableCORS = false
 enableXsrfProtection = false

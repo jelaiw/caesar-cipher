@@ -13,4 +13,4 @@ Perform one-time setup with pipenv for development.
 3. `pipenv install` to install dependencies from Pipfile to virtual environment.
 4. `streamlit run app.py`
 
-NOTE: See workaround for GitHub Codespaces in configuration at `.streamlit/config.toml` and further discussion at https://discuss.streamlit.io/t/how-to-make-streamlit-run-on-codespaces/24526/4.
+NOTE: See workaround for GitHub Codespaces in configuration at `.streamlit/config.toml`.
