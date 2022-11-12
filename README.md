@@ -6,7 +6,7 @@ A Streamlit app for playing with Caesar ciphers.
 Visit at https://caesar.streamlitapp.com/, with a big TY to Streamlit Community Cloud!
 
 ## Developers
-Perform one-time setup.
+Perform one-time setup with pipenv for both development and deployment.
 1. Install pipenv.
    * See https://docs.streamlit.io/library/get-started/installation#install-pipenv.
 2. `pipenv shell` to activate virtual environment.
