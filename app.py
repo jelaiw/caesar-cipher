@@ -50,7 +50,7 @@ st.header("Try it!")
 
 st.sidebar.subheader("Settings")
 cipher_mode = st.sidebar.radio("Cipher mode", ('Encryption', 'Decryption'))
-key_setting = st.sidebar.selectbox("Key", ('Caesar', 'ROT13', 'Custom'))
+key_setting = st.sidebar.selectbox("Shift key", ('Caesar', 'ROT13', 'Custom'))
 key = 3
 if key_setting == 'ROT13':
 	key = 13
