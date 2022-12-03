@@ -24,6 +24,7 @@ def button_handler(text, cipher_mode, key):
 	random_emoji()
 
 st.title("Fun with Caesar Ciphers")
+st.set_page_config(page_title="Fun with Caesar Ciphers")
 
 st.header("Overview")
 tab1, tab2, tab3 = st.tabs(['Caesar Cipher', 'ROT13', 'The Basics'])
