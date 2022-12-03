@@ -3,6 +3,10 @@ import caesar
 from textutil import disguise_text
 import random
 
+# Note, apparently this must be the first Streamlit command used in your app.
+# See https://docs.streamlit.io/library/api-reference/utilities/st.set_page_config.
+st.set_page_config(page_title="Fun with Caesar Ciphers")
+
 # See https://discuss.streamlit.io/t/how-to-add-emoji-to-a-button/15513/2.
 # This seemed fun. :-D
 def random_emoji():
@@ -24,7 +28,6 @@ def button_handler(text, cipher_mode, key):
 	random_emoji()
 
 st.title("Fun with Caesar Ciphers")
-st.set_page_config(page_title="Fun with Caesar Ciphers")
 
 st.header("Overview")
 tab1, tab2, tab3 = st.tabs(['Caesar Cipher', 'ROT13', 'The Basics'])
