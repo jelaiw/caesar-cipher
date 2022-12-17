@@ -14,3 +14,7 @@ Perform one-time setup with pipenv for development.
 4. `streamlit run app.py`
 
 NOTE: See workaround for GitHub Codespaces in configuration at `.streamlit/config.toml`.
+
+## References
+1. *"Streamlit: The fastest way to build and share data apps"*. Streamlit. https://streamlit.io/.
+1. *"Community Cloud: Deploy, manage, and share your apps with the world, directly from Streamlit -- all for free"*. Streamlit. https://streamlit.io/cloud.
