@@ -53,7 +53,7 @@ with tab3:
 st.header("Try it!")
 
 st.sidebar.subheader("Settings")
-cipher_mode = st.sidebar.radio("Cipher mode", ('Encryption', 'Decryption'))
+cipher_mode = st.sidebar.radio("Cipher mode", ('Encrypt text', 'Decrypt text'))
 key_setting = st.sidebar.selectbox("Shift key", ('Caesar', 'ROT13', 'Custom'))
 key = 3
 if key_setting == 'ROT13':
