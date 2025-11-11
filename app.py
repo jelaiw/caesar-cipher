@@ -2,6 +2,7 @@ import streamlit as st
 import caesar
 from textutil import disguise_text
 import random
+from decoder_ring import render_decoder_ring
 
 # Note, apparently this must be the first Streamlit command used in your app.
 # See https://docs.streamlit.io/library/api-reference/utilities/st.set_page_config.
@@ -77,6 +78,9 @@ with col1:
 		text = text.upper()
 
 st.button(f"Click Me {st.session_state.emoji}", on_click=button_handler, args=(text, cipher_mode,key, ))
+
+# Render the decoder ring visualization for the currently selected key
+render_decoder_ring(key)
 st.markdown("Key = **{0}**".format(key))
 
 st.header("References")
