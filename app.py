@@ -34,7 +34,7 @@ tab1, tab2, tab3 = st.tabs(['Caesar Cipher', 'ROT13', 'The Basics'])
 
 with tab1:
     st.subheader("Caesar Cipher")
-    st.markdown("The Caesar cipher ... encrypts a message by shifting each of the letters down three positions in the alphabet, wrapping back around to A if the shift reaches Z [1].")
+    st.markdown("\"The Caesar cipher ... encrypts a message by shifting each of the letters down three positions in the alphabet, wrapping back around to A if the shift reaches Z\" (Aumasson 2018).")
     st.image("fig_1-2.png", width=384, caption="Figure 1: Caesar cipher example")
 
 with tab2:
