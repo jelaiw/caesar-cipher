@@ -18,9 +18,9 @@ if "emoji" not in st.session_state:
 emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼"]
 
 def button_handler(text, cipher_mode, key):
-	if cipher_mode == 'Encryption':
+	if cipher_mode == 'Encrypt text':
 		text = caesar.encrypt(text, key)
-	elif cipher_mode == 'Decryption':
+	elif cipher_mode == 'Decrypt text':
 		text = caesar.decrypt(text, key)
 	else:
 		raise ValueError(cipher_mode)
