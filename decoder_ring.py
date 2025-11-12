@@ -5,15 +5,13 @@ import math
 def render_compact_table(key: int):
     """
     Render a compact mapping table showing the standard alphabet and the alphabet shifted by `key`.
-    Colors optimized for Streamlit dark theme.
+    The bottom row animates when the key changes. Colors optimized for Streamlit dark theme.
     """
     ALPH = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    key = int(key) % len(ALPH)
     shifted = ALPH[key:] + ALPH[:key]
 
-    # Styles tuned for dark backgrounds:
-    # - light text for the original alphabet
-    # - soft green for shifted alphabet
-    # - muted borders and dark cell backgrounds for contrast
+    # Styles tuned for dark backgrounds
     cell_style = (
         "padding:8px;border-right:1px solid #334155;text-align:center;"
         "font-family:monospace;color:#E6EEF6;background:transparent;font-weight:600;"
@@ -23,12 +21,22 @@ def render_compact_table(key: int):
         "font-family:monospace;color:#BBF7D0;background:#071022;font-weight:600;"
     )
 
+    # Static outer (original) alphabet row
     table_cells = "".join(
         f'<td style="{cell_style}">{ch}</td>' for ch in ALPH
     )
-    table_shift = "".join(
-        f'<td style="{shift_style}">{ch}</td>' for ch in shifted
-    )
+    
+    # Animated inner (shifted) alphabet row
+    # Each letter is placed in its own cell with individual animation
+    shift_cells = []
+    for i, ch in enumerate(shifted):
+        # Each cell animates into position based on the current key
+        # Delay is staggered slightly for a cascade effect
+        delay = f"{i * 20}ms"
+        shift_cells.append(
+            f'<td style="{shift_style}; transition: transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1) {delay}; transform: translateX(0);">{ch}</td>'
+        )
+    table_shift = "".join(shift_cells)
 
     table_html = f'''
         <div style="display:inline-block;padding:6px;border-radius:8px;
