@@ -1,22 +1,11 @@
 import streamlit as st
 import caesar
 from textutil import disguise_text
-import random
 from decoder_ring import render_compact_table, render_decoder_ring
 
 # Note, apparently this must be the first Streamlit command used in your app.
 # See https://docs.streamlit.io/library/api-reference/utilities/st.set_page_config.
 st.set_page_config(page_title="Fun with Caesar ciphers")
-
-# See https://discuss.streamlit.io/t/how-to-add-emoji-to-a-button/15513/2.
-# This seemed fun. :-D
-def random_emoji():
-	st.session_state.emoji = random.choice(emojis)
-
-if "emoji" not in st.session_state:
-	st.session_state.emoji = "👈"
-
-emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼"]
 
 def button_handler(text, cipher_mode, key):
 	if cipher_mode == 'Encrypt text':
@@ -26,7 +15,6 @@ def button_handler(text, cipher_mode, key):
 	else:
 		raise ValueError(cipher_mode)
 	st.session_state.text = text
-	random_emoji()
 
 st.title("Fun with Caesar ciphers")
 
