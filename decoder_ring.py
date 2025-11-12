@@ -97,7 +97,7 @@ def render_decoder_ring(key: int):
     svg_width = svg_height = (cx + pad) * 2
 
     svg = f'''
-    <div style="display:flex;align-items:center;justify-content:center;padding:6px">
+    <div style="display:flex;align-items:left;justify-content:left;padding:6px">
       <svg width="{svg_width:.0f}" height="{svg_height:.0f}" viewBox="0 0 {svg_width:.0f} {svg_height:.0f}" xmlns="http://www.w3.org/2000/svg">
         <!-- outer and inner rings -->
         <circle cx="{cx}" cy="{cy}" r="{r_outer}" fill="none" stroke="#0f1720" stroke-width="2" />
