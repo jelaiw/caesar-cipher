@@ -6,7 +6,7 @@ from decoder_ring import render_decoder_ring
 
 # Note, apparently this must be the first Streamlit command used in your app.
 # See https://docs.streamlit.io/library/api-reference/utilities/st.set_page_config.
-st.set_page_config(page_title="Fun with Caesar Ciphers")
+st.set_page_config(page_title="Fun with Caesar ciphers")
 
 # See https://discuss.streamlit.io/t/how-to-add-emoji-to-a-button/15513/2.
 # This seemed fun. :-D
@@ -28,13 +28,13 @@ def button_handler(text, cipher_mode, key):
 	st.session_state.text = text
 	random_emoji()
 
-st.title("Fun with Caesar Ciphers")
+st.title("Fun with Caesar ciphers")
 
 st.header("Overview")
-tab1, tab2, tab3 = st.tabs(['Caesar Cipher', 'ROT13', 'The Basics'])
+tab1, tab2, tab3 = st.tabs(['Caesar cipher', 'ROT13', 'The Basics'])
 
 with tab1:
-    st.subheader("Caesar Cipher")
+    st.subheader("Caesar cipher")
     st.markdown("\"The Caesar cipher ... encrypts a message by shifting each of the letters down three positions in the alphabet, wrapping back around to A if the shift reaches Z\" (Aumasson 2018).")
     st.image("fig_1-2.png", width=384, caption="Figure 1: Caesar cipher example")
 
