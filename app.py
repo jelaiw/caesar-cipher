@@ -12,8 +12,6 @@ def button_handler(text, cipher_mode, key):
 		text = caesar.encrypt(text, key)
 	elif cipher_mode == 'Decrypt text':
 		text = caesar.decrypt(text, key)
-	else:
-		raise ValueError(cipher_mode)
 	st.session_state.text = text
 
 st.title("Fun with Caesar ciphers")
@@ -42,7 +40,7 @@ with tab3:
 st.header("Try it!")
 
 st.sidebar.subheader("Settings")
-visual_mode = st.sidebar.radio("Visualization mode", ('Decoder ring', 'Compact table', 'None'))
+visual_mode = st.sidebar.radio("Visualization mode", ('Compact table', 'Decoder ring', 'None'))
 key_setting = st.sidebar.selectbox("Shift key", ('Caesar', 'ROT13', 'Custom'))
 key = 3
 if key_setting == 'ROT13':
