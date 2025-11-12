@@ -54,7 +54,6 @@ with tab3:
 st.header("Try it!")
 
 st.sidebar.subheader("Settings")
-cipher_mode = st.sidebar.radio("Cipher mode", ('Encrypt text', 'Decrypt text'))
 visual_mode = st.sidebar.radio("Visualization mode", ('Decoder ring', 'Compact table', 'None'))
 key_setting = st.sidebar.selectbox("Shift key", ('Caesar', 'ROT13', 'Custom'))
 key = 3
@@ -66,19 +65,35 @@ elif key_setting == 'Custom':
 force_upper = st.sidebar.checkbox("Force uppercase", value=True, help="Force text to uppercase.")
 disguise = st.sidebar.checkbox("Disguise word boundaries", help="Rewrite text into fixed length blocks.")
 
-col1, col2 = st.columns(2)
+# make the left column wider so the text area has more space
+col1, col2 = st.columns([2, 1])
 with col1:
-	MAX_CHARS = 280
-	previous_text = ""
-	if 'text' in st.session_state:
-		previous_text = st.session_state.text
-	text = st.text_area("Type or paste in text to encrypt or decrypt", help=f"Limit of {MAX_CHARS} characters.", value=previous_text, max_chars=MAX_CHARS)
-	if disguise:
-		text = disguise_text(text)
-	if force_upper:
-		text = text.upper()
+    MAX_CHARS = 280
+    previous_text = ""
+    if 'text' in st.session_state:
+        previous_text = st.session_state.text
+    text = st.text_area("Type or paste in text to encrypt or decrypt",
+                        help=f"Limit of {MAX_CHARS} characters.",
+                        value=previous_text, max_chars=MAX_CHARS)
+    if disguise:
+        text = disguise_text(text)
+    if force_upper:
+        text = text.upper()
 
-st.button(f"Click Me {st.session_state.emoji}", on_click=button_handler, args=(text, cipher_mode,key, ))
+    # small spacer so the buttons don't butt directly against the text area
+    st.write("")  
+
+    # place buttons side-by-side beneath the text area so they're visually aligned
+    btn_c1, btn_c2 = st.columns([1, 1])
+    with btn_c1:
+        st.button("Encrypt 🔐", on_click=button_handler, args=(text, 'Encrypt text', key))
+    with btn_c2:
+        st.button("Decrypt 🔓", on_click=button_handler, args=(text, 'Decrypt text', key))
+
+with col2:
+    # keep the right column available for visualization/output
+    # (you can add previews, hints, or controls here)
+    st.empty()
 
 # Render the decoder ring visualization for the currently selected key
 if visual_mode == 'Decoder ring':
