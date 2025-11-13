@@ -40,7 +40,7 @@ with tab3:
 st.header("Try it!")
 
 st.sidebar.subheader("Settings")
-visual_mode = st.sidebar.radio("Visualization mode", ('Compact mapping table', 'Decoder ring', 'None'))
+visual_mode = st.sidebar.radio("Visualization mode", ('Compact mapping', 'Decoder ring', 'None'))
 key_setting = st.sidebar.selectbox("Shift key", ('Caesar', 'ROT13', 'Custom'))
 key = 3
 if key_setting == 'ROT13':
@@ -84,7 +84,7 @@ with col2:
 # Render the decoder ring visualization for the currently selected key
 if visual_mode == 'Decoder ring':
     render_decoder_ring(key)
-elif visual_mode == 'Compact mapping table':
+elif visual_mode == 'Compact mapping':
     render_compact_table(key)
 
 st.markdown("Key = **{0}**".format(key))
