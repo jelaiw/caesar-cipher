@@ -5,6 +5,11 @@ A Streamlit app for playing with Caesar ciphers.
 ## Run the App
 Deployed at https://caesar.streamlit.app, with a big TY to Streamlit Community Cloud!
 
+## Demos
+Basic flow.
+
+![Demo of basic flow](/assets/caesar-rot3-demo.gif)
+
 ## Developers
 Perform one-time setup with pipenv for development.
 1. Install pipenv.
