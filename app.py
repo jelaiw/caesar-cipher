@@ -40,9 +40,9 @@ with tab3:
 st.header("Try it!")
 
 st.sidebar.subheader("Settings")
-visual_mode = st.sidebar.radio("Visualization mode", ('Compact mapping', 'Decoder ring', 'None'))
-key_setting = st.sidebar.selectbox("Shift key", ('Caesar', 'ROT13', 'Custom'))
-key = 3
+visual_mode = st.sidebar.radio("Visualization Mode", ('Compact mapping', 'Decoder ring', 'None'))
+key_setting = st.sidebar.selectbox("\"Secret\" Key", ('Caesar', 'ROT13', 'Custom'), help="Number of positions to shift each letter.")
+key = 3 # Default to Caesar cipher.
 if key_setting == 'ROT13':
 	key = 13
 elif key_setting == 'Custom':
@@ -87,7 +87,7 @@ if visual_mode == 'Decoder ring':
 elif visual_mode == 'Compact mapping':
     render_compact_table(key)
 
-st.markdown("Key = **{0}**".format(key))
+st.markdown("Secret Key = **{0}**".format(key))
 
 st.header("References")
 with open("references.md", "r") as f:
