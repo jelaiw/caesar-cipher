@@ -50,6 +50,7 @@ elif key_setting == 'Custom':
 
 force_upper = st.sidebar.checkbox("Force uppercase", value=True, help="Force text to uppercase.")
 disguise = st.sidebar.checkbox("Disguise word boundaries", help="Rewrite text into fixed length blocks.")
+debug_key = st.sidebar.checkbox("Show secret key", value=True, help="Show current value of key for debugging.")
 
 # make the left column wider so the text area has more space
 col1, col2 = st.columns([2, 1])
@@ -87,7 +88,8 @@ if visual_mode == 'Decoder ring':
 elif visual_mode == 'Compact mapping':
     render_compact_table(key)
 
-st.markdown("Secret Key = **{0}**".format(key))
+if debug_key: 
+    st.markdown("Secret Key = **{0}**".format(key))
 
 st.header("References")
 with open("references.md", "r") as f:
