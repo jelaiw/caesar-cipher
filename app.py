@@ -40,7 +40,7 @@ with tab3:
 st.header("Try it!")
 
 st.sidebar.subheader("Settings")
-visual_mode = st.sidebar.radio("Visualization Mode", ('Compact mapping', 'Decoder ring', 'None'))
+visual_mode = st.sidebar.radio("Visualization Mode", ('Compact mapping', 'Decoder ring', 'None'), help="Visualize the mapping of each letter to substitute letter.")
 key_setting = st.sidebar.selectbox("\"Secret\" Key", ('Caesar', 'ROT13', 'Custom'), help="Number of positions to shift each letter.")
 key = 3 # Default to Caesar cipher.
 if key_setting == 'ROT13':
