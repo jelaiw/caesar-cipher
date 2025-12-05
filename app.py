@@ -46,7 +46,7 @@ key = 3 # Default to Caesar cipher.
 if key_setting == 'ROT13':
 	key = 13
 elif key_setting == 'Custom':
-	key = st.sidebar.slider("Custom Key", 1, 25, 3)
+	key = st.sidebar.slider("User-specified key", 1, 25, 3, label_visibility="collapsed", help="Choose a custom key between 1 and 25.")
 
 force_upper = st.sidebar.checkbox("Force uppercase", value=True, help="Force text to uppercase.")
 disguise = st.sidebar.checkbox("Disguise word boundaries", help="Rewrite text into fixed length blocks.")
