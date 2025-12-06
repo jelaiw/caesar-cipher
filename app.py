@@ -37,6 +37,7 @@ with tab3:
     st.markdown("Similarly, for decryption function **D**:")
     st.latex(r'P = \bold{D}(K, C)')
 
+st.divider()
 st.header("Try it!")
 
 st.sidebar.subheader("Settings")
