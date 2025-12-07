@@ -17,7 +17,7 @@ def button_handler(text, cipher_mode, key):
 st.title("Fun with Caesar ciphers")
 
 st.header("Overview")
-tab1, tab2, tab3 = st.tabs(['Caesar cipher', 'ROT13', 'The Basics'])
+tab1, tab2, tab3 = st.tabs(['Caesar cipher', 'ROT13', 'Some Basics'])
 
 with tab1:
     st.subheader("Caesar cipher")
@@ -26,11 +26,11 @@ with tab1:
 
 with tab2:
     st.subheader("ROT13")
-    st.markdown("ROT13 is a special case of the Caesar cipher that replaces a letter with the 13th letter after it in the alphabet [2][3].")
+    st.markdown("ROT13 is a special case of the Caesar cipher that replaces a letter with the 13th letter after it in the alphabet (Wikipedia).")
     st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=384, caption="Figure 2: ROT13 example")
 
 with tab3:
-    st.subheader("The Basics")
+    st.subheader("Some Basics")
     with open("basics.md", "r") as f:
         st.markdown(f.read())
     st.latex(r'C = \bold{E}(K, P)')
