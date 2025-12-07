@@ -17,20 +17,17 @@ def button_handler(text, cipher_mode, key):
 st.title("Fun with Caesar ciphers")
 
 st.header("Overview")
-tab1, tab2, tab3 = st.tabs(['Caesar cipher', 'ROT13', 'Some Basics'])
+tab1, tab2, tab3 = st.tabs(['Caesar cipher', 'ROT13', 'Some Basic Terms'])
 
 with tab1:
-    st.subheader("Caesar cipher")
     st.markdown("\"The Caesar cipher ... encrypts a message by shifting each of the letters down three positions in the alphabet, wrapping back around to A if the shift reaches Z\" (Aumasson 2018).")
     st.image("assets/fig_1-2.png", width=384, caption="Figure 1: Caesar cipher example")
 
 with tab2:
-    st.subheader("ROT13")
     st.markdown("ROT13 is a special case of the Caesar cipher that replaces a letter with the 13th letter after it in the alphabet (Wikipedia).")
     st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=384, caption="Figure 2: ROT13 example")
 
 with tab3:
-    st.subheader("Some Basics")
     with open("basics.md", "r") as f:
         st.markdown(f.read())
     st.latex(r'C = \bold{E}(K, P)')
@@ -92,6 +89,7 @@ elif visual_mode == 'Compact mapping':
 if debug_key: 
     st.markdown("Secret Key = **{0}**".format(key))
 
+st.divider()
 st.header("References")
 with open("references.md", "r") as f:
 	st.markdown(f.read())
