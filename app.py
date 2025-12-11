@@ -25,7 +25,7 @@ with tab1:
 
 with tab2:
     st.markdown("ROT13 replaces each letter with the 13th letter after it in the alphabet.")
-    st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=384, caption="Figure 2: ROT13 example")
+    st.image("https://upload.wikimedia.org/wikipedia/commons/2/2a/ROT13.png", width=384, caption="Figure 2: ROT13 example (Wikipedia)")
 
 with tab3:
     with open("basics.md", "r") as f:
