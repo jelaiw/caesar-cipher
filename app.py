@@ -37,18 +37,19 @@ with tab3:
 st.divider()
 st.header("Try it!")
 
-st.sidebar.subheader("Settings")
-visual_mode = st.sidebar.radio("Visualization Mode", ('Compact mapping', 'Decoder ring', 'None'), help="Visualize the mapping of each letter to substitute letter.")
+st.sidebar.subheader("Main Settings", divider="gray")
 key_setting = st.sidebar.selectbox("\"Secret\" Key", ('Caesar', 'ROT13', 'Custom'), help="Number of positions to shift each letter.")
 key = 3 # Default to Caesar cipher.
 if key_setting == 'ROT13':
 	key = 13
 elif key_setting == 'Custom':
 	key = st.sidebar.slider("User-specified key", 1, 25, 3, label_visibility="collapsed", help="Choose a custom key between 1 and 25.")
+debug_key = st.sidebar.checkbox("Show secret key", value=True, help="Show current value of key for debugging.")
+visual_mode = st.sidebar.radio("Visualization Mode", ('Compact mapping', 'Decoder ring', 'None'), help="Visualize the mapping of each letter to substitute letter.")
 
+st.sidebar.subheader("Other Options", divider="gray")
 force_upper = st.sidebar.checkbox("Force uppercase", value=True, help="Force text to uppercase.")
 disguise = st.sidebar.checkbox("Disguise word boundaries", help="Rewrite text into fixed length blocks.")
-debug_key = st.sidebar.checkbox("Show secret key", value=True, help="Show current value of key for debugging.")
 
 # make the left column wider so the text area has more space
 col1, col2 = st.columns([2, 1])
