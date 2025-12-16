@@ -54,7 +54,7 @@ disguise = st.sidebar.checkbox("Disguise word boundaries", help="Rewrite text in
 # make the left column wider so the text area has more space
 col1, col2 = st.columns([2, 1])
 with col1:
-    MAX_CHARS = 280
+    MAX_CHARS = 280 # Same as limit for tweets circa 2017, https://charactercounter.com/twitter.
     previous_text = ""
     if 'text' in st.session_state:
         previous_text = st.session_state.text
