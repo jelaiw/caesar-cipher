@@ -11,12 +11,14 @@ Basic flow.
 ![Demo of basic flow](/assets/caesar-rot3-demo.gif)
 
 ## Developers
-Perform one-time setup with Pipenv.
+Set up something like the following:
 1. Install Pipenv.
    * See https://docs.streamlit.io/library/get-started/installation#install-pipenv.
 2. `pipenv shell` to activate virtual environment.
 3. `pipenv install` to install dependencies from Pipfile to virtual environment.
 4. `streamlit run app.py`
+
+NOTE: _Streamlit's install docs no longer prescribe Pipenv (above link anchor is gone too), but leaving above instructions intact as it still works to quickly get me started on GitHub Codespaces_.
 
 ## References
 1. *"Streamlit: The fastest way to build and share data apps"*. Streamlit. https://streamlit.io/.
