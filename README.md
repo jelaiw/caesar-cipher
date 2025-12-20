@@ -20,6 +20,21 @@ Set up something like the following:
 
 NOTE: _Streamlit's install docs no longer prescribe Pipenv (above link anchor is gone too), but leaving above instructions intact as it still works to quickly get me started on GitHub Codespaces_.
 
+Run unit tests like this:
+```sh
+$ pytest
+================================================================== test session starts ===================================================================
+platform linux -- Python 3.12.1, pytest-9.0.1, pluggy-1.6.0
+rootdir: /workspaces/caesar-cipher
+plugins: anyio-4.11.0
+collected 18 items                                                                                                                                       
+
+test_caesar.py .............                                                                                                                       [ 72%]
+test_textutil.py .....                                                                                                                             [100%]
+
+=================================================================== 18 passed in 0.03s ===================================================================
+```
+
 ## References
 1. *"Streamlit: The fastest way to build and share data apps"*. Streamlit. https://streamlit.io/.
 1. *"Community Cloud: Deploy, manage, and share your apps with the world, directly from Streamlit -- all for free"*. Streamlit. https://streamlit.io/cloud.
