@@ -18,7 +18,7 @@ Set up something like the following:
 3. `pipenv install` to install dependencies from Pipfile to virtual environment.
 4. `streamlit run app.py`
 
-NOTE: _Streamlit's install docs no longer prescribe Pipenv (above link anchor is gone too), but leaving above instructions intact as it still works to quickly get me started on GitHub Codespaces_.
+NOTE: _Streamlit's install docs no longer prescribe Pipenv (above link anchor is gone too), but leaving instructions intact as they still work to quickly get started (especially on GitHub Codespaces)_.
 
 Run unit tests like this:
 ```sh
